@@ -1,0 +1,12 @@
+{
+  "site_callback": "CALLBACK TO RETURN TO FROM LAMBDA",
+  "email_table_name": "EMAIL DYNAMO DB TABLE",
+  "password": "AES PASSWORD",
+  "mail_api_key": "KEY HERE FOR MAILGUN",
+  "twitter_api_callback": "API CALLBACK FOR TWITTER",
+  "follow_uid": "OUR TWITTER ACCOUNT UNIQUE ID TO FOLLOW",
+  "consumer_key": "TWITTER CONSUMER KEY",
+  "consumer_secret": "TWITTER CONSUMER SECRET",
+  "twitter_table_name": "TWITTER DYNAMO DB TABLE",
+  "twitter_session_table_name": "SESSION DYNAMO DB TABLE"
+}
