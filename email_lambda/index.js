@@ -94,6 +94,7 @@ exports.handler = (event, context, callback) => {
                else{
                 // Replace keywords in email with the correct values
                 email.text = html.replace('RECIPIENT', raw_email);
+                email.to = raw_email;
                 client.sendMail(email, function(error,info){
                    // SUPER NOTE: No email exists !＝ error here. This will pretty much only fail with wrong API keys / bad account
                    if (error){
