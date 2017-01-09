@@ -10,5 +10,5 @@
   "consumer_secret": "TWITTER CONSUMER SECRET",
   "twitter_table_name": "TWITTER DYNAMO DB TABLE",
   "twitter_session_table_name": "SESSION DYNAMO DB TABLE",
-  "from_email": "Emails that the account is listed from coming from."
+  "from_email": "Emails that the account is listed as coming from."
 }
