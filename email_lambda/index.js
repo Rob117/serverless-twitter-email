@@ -15,28 +15,28 @@ var mg = require('nodemailer-mailgun-transport');
 // Require Filesystem to Read Emails
 var fs = require('fs');
 
-var options = {
-  auth: {
-    // Mailgun API Key
-    api_key: env_config.mail_api_key,
-    // Mailgun domain here. See mailgun site / domains
-    domain: env_config.mailgun_domain_name
-  }
-};
-
-//Mailgun boilerplate for client/email creation
-var client = nodemailer.createTransport(mg(options));
-var email = {
-  from: env_config.from_email,
-  subject: 'Hello',
-  text: 'This is the test email',
-  html: '<b>This is the test email in bold, and html!</b>'
-};
-
 // This is the standard entry method for lambdas.
 exports.handler = (event, context, callback) => {
     // This is our custom loader function
     loader.load(event, context, function(env_config){
+
+      var options = {
+        auth: {
+          // Mailgun API Key
+          api_key: env_config.mail_api_key,
+          // Mailgun domain here. See mailgun site / domains
+          domain: env_config.mailgun_domain_name
+        }
+      };
+
+      //Mailgun boilerplate for client/email creation
+      var client = nodemailer.createTransport(mg(options));
+      var email = {
+        from: env_config.from_email,
+        subject: 'Hello',
+        text: 'This is the test email',
+        html: '<b>This is the test email in bold, and html!</b>'
+      };
 
   const redirect = function(params){
     // The only way to redirect in lambda is to throw an error
