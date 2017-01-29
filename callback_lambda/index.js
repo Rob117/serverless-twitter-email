@@ -2,7 +2,7 @@
 
 var AWS = require("aws-sdk");
 var loader = require("./loader.js");
-var dynamo = new AWS.DynamoDB.DocumentClient({region: 'ap-northeast-1'});
+var dynamo = new AWS.DynamoDB.DocumentClient({region: 'us-west-1'});
 var twitterAPI = require('node-twitter-api');
 
 exports.handler = (event, context, callback) => {
@@ -85,7 +85,6 @@ exports.handler = (event, context, callback) => {
                                     console.trace(err);
                                 }
                                 if(res.Item.follow){
-                                    console.log(env_config["follow_uid"]);
                                     twitter.friendships("create",{
                                         user_id : env_config.follow_uid,
                                         follow : true
