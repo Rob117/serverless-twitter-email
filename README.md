@@ -1,1 +1,2 @@
-This is the repository for a sweet lambda-powered twitter backend
+The repo for:
+https://dev.to/rob117/serverless-backends-with-aws-cloud-intro
